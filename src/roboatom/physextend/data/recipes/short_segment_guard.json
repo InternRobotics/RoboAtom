@@ -1,0 +1,43 @@
+{
+  "name": "short_segment_guard",
+  "parent": "sequence_group_selection",
+  "method": "merge_short",
+  "params": {
+    "RoboMindV2|franka": [
+      0.5,
+      "shorter"
+    ],
+    "RoboMindV2|agilex": [
+      1.0,
+      "shorter"
+    ],
+    "RoboMindV2|agilex_mobile": [
+      1.0,
+      "shorter"
+    ],
+    "RoboDojo": [
+      1.0,
+      "longer"
+    ],
+    "RoboMind2|agilex": [
+      1.0,
+      "longer"
+    ],
+    "RoboMind2|tienkung": [
+      1.0,
+      "longer"
+    ],
+    "RoboCOIN|galaxea_r1_lite": [
+      1.0,
+      "longer"
+    ],
+    "RoboCOIN|agilex_cobot_decoupled_magic": [
+      0.7,
+      "longer"
+    ],
+    "InternData-A1|franka": [
+      0.5,
+      "longer"
+    ]
+  }
+}

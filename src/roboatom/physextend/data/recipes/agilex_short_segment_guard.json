@@ -1,0 +1,11 @@
+{
+  "name": "agilex_short_segment_guard",
+  "parent": "mobile_transition_bias",
+  "method": "merge_short",
+  "params": {
+    "RoboMindV2|agilex": [
+      1.0,
+      "shorter"
+    ]
+  }
+}

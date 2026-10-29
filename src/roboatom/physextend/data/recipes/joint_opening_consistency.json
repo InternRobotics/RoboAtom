@@ -1,0 +1,7 @@
+{
+  "name": "joint_opening_consistency",
+  "parent": "joint_state_support",
+  "method": "joint_state_refine",
+  "input_baseline": "motion_granularity_guard",
+  "opening_nonworsening": true
+}

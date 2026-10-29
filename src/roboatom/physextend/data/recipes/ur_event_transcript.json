@@ -1,0 +1,9 @@
+{
+  "name": "ur_event_transcript",
+  "parent": "mobile_chassis_dtw",
+  "method": "event_transcript",
+  "scope": [
+    "RoboMindV2|ur"
+  ],
+  "params": {}
+}

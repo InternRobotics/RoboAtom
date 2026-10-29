@@ -1,0 +1,9 @@
+{
+  "name": "event_checked_majority",
+  "parent": "group_start",
+  "method": "sequence_vote",
+  "params": {
+    "rule": "majority_shortest",
+    "event_tolerance": 0.05
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "joint_dtw_more_groups",
+  "parent": "joint_dtw_transfer",
+  "method": "joint_dtw",
+  "params": {
+    "RoboMindV2|franka": [
+      0.2,
+      1.0,
+      3
+    ],
+    "RoboMindV2|ur": [
+      0.08,
+      0.5
+    ],
+    "RoboMind2|tienkung": [
+      0.2,
+      1.0,
+      3
+    ],
+    "RoboMind2|franka": [
+      0.2,
+      0.5
+    ],
+    "RoboMind2|ur": [
+      0.2,
+      1.0
+    ],
+    "RoboCOIN|galaxea_r1_lite": [
+      0.2,
+      1.0,
+      6
+    ],
+    "RoboCOIN|agilex_cobot_decoupled_magic": [
+      0.2,
+      1.0,
+      6
+    ],
+    "RoboCOIN|discover_robotics_aitbot_mmk2": [
+      0.08,
+      1.0
+    ]
+  }
+}

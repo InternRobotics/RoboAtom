@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f3">
+  <meta name="description" content="RoboAtom provides unified, time-aligned atomic-action supervision for robot learning, with 1.45 million trajectories, a dedicated benchmark, and downstream validation.">
+  <meta property="og:title" content="RoboAtom: Large-scale Atomic-Action Supervision for Robot Learning">
+  <meta property="og:description" content="Unified, time-aligned atomic-action supervision for robot learning.">
+  <meta property="og:type" content="website">
+  <title>RoboAtom: Large-scale Atomic-Action Supervision for Robot Learning</title>
+  <link rel="icon" href="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/brand/roboatom-icon.png" type="image/png">
+  <link rel="stylesheet" href="styles.css?v=b41e0fe3004a">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="RoboAtom home"><img class="brand-icon" src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/brand/roboatom-icon.png" alt="" width="1254" height="1254">
+        <span class="wordmark-frame" aria-hidden="true"><img src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/brand/roboatom-wordmark.png" alt="" width="2060" height="763"></span>
+        <span class="visually-hidden">RoboAtom</span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#video"><svg class="resource-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#video"></use></svg> Overview</a>
+        <a data-release="code" href="https://github.com/InternRobotics/RoboAtom" target="_blank" rel="noopener noreferrer"><svg class="resource-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#code"></use></svg> GitHub</a>
+        <a data-release="data" href="https://huggingface.co/datasets/InternRobotics/RoboAtom" target="_blank" rel="noopener noreferrer"><svg class="resource-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#data"></use></svg> Hugging Face</a>
+        <a data-release="models" href="https://huggingface.co/InternRobotics/RoboAtom" target="_blank" rel="noopener noreferrer"><svg class="resource-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#models"></use></svg> Models</a>
+      </nav>
+      <a class="header-resource resource-link is-available" data-resource="paper" href="https://arxiv.org/abs/2610.40207" target="_blank" rel="noopener noreferrer">
+        <svg class="resource-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#paper"></use></svg> <span>Paper</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+        <a href="#video"><svg class="resource-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#video"></use></svg> Overview</a>
+        <a data-release="code" href="https://github.com/InternRobotics/RoboAtom" target="_blank" rel="noopener noreferrer"><svg class="resource-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#code"></use></svg> GitHub</a>
+        <a data-release="data" href="https://huggingface.co/datasets/InternRobotics/RoboAtom" target="_blank" rel="noopener noreferrer"><svg class="resource-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#data"></use></svg> Hugging Face</a>
+        <a data-release="models" href="https://huggingface.co/InternRobotics/RoboAtom" target="_blank" rel="noopener noreferrer"><svg class="resource-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#models"></use></svg> Models</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="video-wall" aria-hidden="true">
+        <div class="wall-tile">
+          <video id="hero-video" data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/01-robomind-2-0.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/01-robomind-2-0.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/02-interndata-a1.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/02-interndata-a1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/03-private.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/03-private.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/04-libero.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/04-libero.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/05-robocoin.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/05-robocoin.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/06-robotwin-2-0.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/06-robotwin-2-0.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/07-agibot-world-beta.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/07-agibot-world-beta.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/08-robomind.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/08-robomind.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/09-ebench.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/09-ebench.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/10-galaxea-open-world.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/10-galaxea-open-world.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/11-robodojo.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/11-robodojo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/12-robocasa.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/12-robocasa.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/13-rh20t.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/13-rh20t.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/14-agibot-world-2026.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/14-agibot-world-2026.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/15-robocerebra.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/15-robocerebra.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wall-tile">
+          <video data-wall-video muted loop playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/16-abc-130k.jpg" tabindex="-1">
+            <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/wall/16-abc-130k.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="hero-shade"></div>
+      <div class="content-width hero-inner">
+        <h1 id="hero-title"><span class="visually-hidden">RoboAtom</span><span class="wordmark-frame" aria-hidden="true"><img src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/brand/roboatom-wordmark.png" alt="" width="2060" height="763"></span></h1>
+        <p class="hero-paper-title">Large-scale Atomic-Action Supervision for Robot Learning</p>
+      </div>
+    </section>
+
+    <section class="section overview-video-section" id="video" aria-label="RoboAtom overview video">
+      <div class="content-width">
+        <div class="project-resources" aria-label="Project resources">
+          <a class="resource-link is-available" data-resource="paper" href="https://arxiv.org/abs/2610.40207" target="_blank" rel="noopener noreferrer"><svg class="resource-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#paper"></use></svg> Paper</a>
+          <a class="resource-link is-available" data-release="code" href="https://github.com/InternRobotics/RoboAtom" target="_blank" rel="noopener noreferrer"><svg class="resource-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#code"></use></svg> GitHub</a>
+          <a class="resource-link is-available" data-release="data" href="https://huggingface.co/datasets/InternRobotics/RoboAtom" target="_blank" rel="noopener noreferrer"><svg class="resource-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#data"></use></svg> Dataset</a>
+          <a class="resource-link is-available" data-release="models" href="https://huggingface.co/InternRobotics/RoboAtom" target="_blank" rel="noopener noreferrer"><svg class="resource-icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#models"></use></svg> Models</a>
+        </div>
+        <video id="overview-video" controls playsinline preload="metadata"
+               poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/overview-full.jpg?v=c75367f5636f" aria-label="RoboAtom overview video">
+          <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/overview/roboatom-overview.mp4" type="video/mp4">
+          <a href="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/overview/roboatom-overview.mp4">Open video</a>
+        </video>
+        <h2 class="research-title" id="abstract-title">Abstract</h2>
+        <p class="section-intro overview-intro">Fine-grained action annotations can support skill reuse and compositional generalization in robot policies. However, robot datasets typically provide task-level instructions without subtask annotations. Although some include subtask labels, inconsistent formats and conventions hinder cross-source joint training. We propose RoboAtom-Data, which adds unified, time-aligned atomic-action annotations to existing data from multiple sources, covering 1.45 million trajectories, 6.88 million skill-labeled segments, and 16,882.1 hours. Our pipeline combines a unified protocol, large-scale manual annotation, propagation across repeated executions with the same ordered skill sequence, and multi-stage quality control. We evaluate the dataset through automatic atomic-action annotation and robot control. We construct RoboAtom-Bench to standardize evaluation of skill recognition and temporal boundary localization. Trained on the annotated data, RoboAtom-Anno achieves better automatic annotation performance than all evaluated open- and closed-source models on both RoboAtom-Bench and the external WGO-Bench. For robot control, atomic-action supervision paired with hierarchical execution improves task success over task-level baselines on LIBERO-Long, LIBERO-Plus, and RoboTwin</p>
+      </div>
+    </section>
+
+    <section class="section media-section" id="examples" aria-labelledby="examples-title">
+      <div class="content-width">
+        <h2 class="research-title" id="examples-title">Annotated examples</h2>
+        <div class="video-grid">
+          <article class="video-card" data-video-card data-video="nesting">
+            <div class="video-frame">
+              <video controls muted playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/nesting-dolls.jpg" aria-label="Annotated video: arranging five nesting dolls">
+                <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/demos/nesting-dolls.mp4" type="video/mp4">
+              </video>
+              <div class="active-annotation" aria-live="polite">
+                <span class="active-skill" data-active-skill>Pick</span>
+                <span data-active-action>Picks up the first matryoshka doll</span>
+              </div>
+            </div>
+            <h3 class="video-copy">Order five nesting dolls</h3>
+            <div class="annotation-timeline" data-timeline role="group" aria-label="Nesting doll annotation timeline"></div>
+          </article>
+          <article class="video-card" data-video-card data-video="sandwich">
+            <div class="video-frame">
+              <video controls muted playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/sandwich.jpg" aria-label="Annotated video: making a sandwich">
+                <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/demos/sandwich.mp4" type="video/mp4">
+              </video>
+              <div class="active-annotation" aria-live="polite">
+                <span class="active-skill" data-active-skill>Pick</span>
+                <span data-active-action>Picks up the first bread slice and the meat patty</span>
+              </div>
+            </div>
+            <h3 class="video-copy">Make a sandwich</h3>
+            <div class="annotation-timeline" data-timeline role="group" aria-label="Sandwich annotation timeline"></div>
+          </article>
+          <article class="video-card" data-video-card data-video="dishwasher">
+            <div class="video-frame">
+              <video controls muted playsinline preload="metadata" poster="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/posters/dishwasher-open-place.jpg" aria-label="Annotated video: opening a dishwasher and placing a bowl">
+                <source src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/videos/demos/dishwasher-open-place.mp4" type="video/mp4">
+              </video>
+              <div class="active-annotation" aria-live="polite">
+                <span class="active-skill" data-active-skill>Open</span>
+                <span data-active-action>Opens the dishwasher door</span>
+              </div>
+            </div>
+            <h3 class="video-copy">Load a dishwasher</h3>
+            <div class="annotation-timeline" data-timeline role="group" aria-label="Dishwasher annotation timeline"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section research-section" id="data" aria-labelledby="data-title">
+      <div class="content-width">
+        <h2 class="research-title" id="data-title">RoboAtom-Data</h2>
+        <p class="section-intro">RoboAtom-Data unifies atomic-action annotations across robot datasets. Human-reviewed seed annotations, same-task extension, and quality control produce consistent supervision for skill-level learning</p>
+        <div class="research-block" id="method">
+          <h3>Construction</h3>
+        <figure class="paper-figure">
+          <a class="figure-image" href="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/figures/construction-pipeline.png" data-figure
+             data-title="RoboAtom construction pipeline" aria-label="Enlarge RoboAtom construction pipeline">
+            <img src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/figures/construction-pipeline.png" alt="RoboAtom construction pipeline" loading="lazy" decoding="async">
+          </a>
+
+        </figure>
+        </div>
+        <div class="research-block" id="physextend">
+        <div class="result-panel" id="panel-extension">
+          <div class="table-scroll" role="region" aria-label="PhysExtend annotation extension results table" tabindex="0">
+            <table>
+              <caption><a class="title-link" data-release="code" href="https://github.com/InternRobotics/RoboAtom#physextend" target="_blank" rel="noopener noreferrer">PhysExtend</a></caption>
+              <thead><tr><th scope="col">Model</th><th scope="col"><abbr title="Mean temporal intersection over union">mIoU</abbr></th><th scope="col"><span class="metric-label">Temporal F1@0.7</span></th><th scope="col"><span class="metric-label">Skill F1@0.7</span></th><th scope="col">EA (%)</th><th scope="col">Cost <span class="column-unit">(USD / video hour)</span></th></tr></thead>
+              <tbody>
+                <tr><th scope="row">GPT-4o</th><td>48.2</td><td>20.7</td><td>11.1</td><td>10</td><td>0.888</td></tr>
+                <tr><th scope="row">Gemini 3.1 Pro</th><td>61.1</td><td>44.9</td><td>39.7</td><td>39</td><td>2.877</td></tr>
+                <tr><th scope="row">GPT-5.6-sol</th><td>58.9</td><td>37.8</td><td>35.0</td><td>46</td><td>3.510</td></tr>
+                <tr><th scope="row">Qwen3.8-27B</th><td>46.1</td><td>25.4</td><td>19.1</td><td>25</td><td>0.051</td></tr>
+                <tr><th scope="row">Cortex</th><td>66.5</td><td>49.8</td><td>48.5</td><td>37</td><td>4.8 &times; 10<sup>-4</sup></td></tr>
+                <tr class="our-result"><th scope="row">PhysExtend</th><td>76.8</td><td>71.6</td><td>71.0</td><td>69</td><td>2.8 &times; 10<sup>-5</sup></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <details class="metric-definitions">
+            <summary>Metric definitions</summary>
+            <dl>
+            <dt>mIoU</dt><dd>Mean temporal intersection over union between ground-truth and predicted segments, ignoring skill labels</dd>
+            <dt>Temporal F1@0.7</dt><dd>Segment detection F1 with temporal intersection over union of at least 0.7</dd>
+            <dt>Skill F1@0.7</dt><dd>Segment F1 requiring both temporal intersection over union of at least 0.7 and matching skill labels</dd>
+            <dt>Episode accuracy (EA)</dt><dd>Percentage of trajectories in which every subtask has correct semantics and segmentation</dd>
+            </dl>
+          </details>
+        </div>
+        </div>
+        <div class="research-block">
+          <h3>Dataset composition</h3>
+        <figure class="paper-figure panel-figure" id="overview">
+          <a class="figure-image" href="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/figures/data-composition.svg" data-figure
+             data-title="RoboAtom-Data composition" aria-label="Enlarge RoboAtom-Data composition">
+            <img src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/figures/data-composition.svg" alt="RoboAtom-Data composition" loading="lazy" decoding="async">
+          </a>
+
+        </figure>
+        <div class="table-scroll" role="region" aria-label="Dataset comparison table" tabindex="0">
+          <table id="dataset-comparison">
+            <caption title="Source annotation units differ">Datasets with subtask annotations</caption>
+            <thead><tr><th scope="col">Dataset</th><th scope="col">Domain</th><th scope="col">Hours</th><th scope="col">Trajectories</th><th scope="col">Segments</th><th scope="col">Skills</th><th scope="col">Tasks</th><th scope="col">Embodiments</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">AgiBot World Beta</th><td>Real</td><td>2,976.4</td><td>141,563</td><td>1,001,552</td><td>77</td><td>217</td><td>1</td></tr>
+              <tr><th scope="row">AgiBot World 2026</th><td>Real</td><td>591.6</td><td>28,331</td><td>327,355</td><td>43</td><td>37</td><td>1</td></tr>
+              <tr><th scope="row">Galaxea Open-World</th><td>Real</td><td>500.0</td><td>19,183</td><td>108,775</td><td>58</td><td>150</td><td>1</td></tr>
+              <tr><th scope="row">RoboInter-Data</th><td>Real</td><td>2,417.1</td><td>235,880</td><td>752,388</td><td>15</td><td>232</td><td>6</td></tr>
+              <tr><th scope="row">BEHAVIOR-1K 2026</th><td>Sim</td><td>1,952.9</td><td>20,000</td><td>406,341</td><td>35</td><td>100</td><td>1</td></tr>
+              <tr class="our-result"><th scope="row">RoboAtom-Data</th><td>Mixed</td><td>16,882.1</td><td>1,446,974</td><td>6,876,282</td><td>29</td><td>3,334</td><td>32</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section research-section" id="benchmark" aria-labelledby="benchmark-title">
+      <div class="content-width">
+        <h2 class="research-title" id="benchmark-title"><a class="title-link" data-release="data" href="https://huggingface.co/datasets/InternRobotics/RoboAtom" target="_blank" rel="noopener noreferrer">RoboAtom-Bench <span class="external-arrow" aria-hidden="true">↗</span></a></h2>
+        <p class="section-intro">RoboAtom-Bench evaluates which actions occur, their order, and their temporal boundaries. Its subsets cover short, medium, and long action sequences, together with synchronized multi-camera videos</p>
+        <div class="benchmark-layout">
+          <figure class="paper-figure">
+            <a class="figure-image" href="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/figures/benchmark-radar.svg" data-figure
+               data-title="RoboAtom-Bench and WGO-Bench comparison" aria-label="Enlarge benchmark comparison radar chart">
+              <img src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/figures/benchmark-radar.svg" alt="Radar comparison of RoboAtom-Bench and WGO-Bench across trajectories, views, segments, sources, hours, and steps" loading="lazy" decoding="async" width="1200" height="947">
+            </a>
+          </figure>
+          <figure class="paper-figure">
+            <a class="figure-image" href="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/figures/benchmark-distribution.svg?v=829edc0928ce" data-figure
+               data-title="RoboAtom-Bench trajectory composition" aria-label="Enlarge benchmark composition ring chart">
+              <img src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/figures/benchmark-distribution.svg?v=829edc0928ce" alt="Concentric distributions of action counts, skill types, camera views, and benchmark subsets with 500 episodes in the center and the complete subset legend on the right" loading="lazy" decoding="async" width="1200" height="588">
+            </a>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section research-section" id="anno" aria-labelledby="anno-title">
+      <div class="content-width">
+        <h2 class="research-title" id="anno-title"><a class="title-link" data-release="models" href="https://huggingface.co/InternRobotics/RoboAtom" target="_blank" rel="noopener noreferrer">RoboAtom-Anno <span class="external-arrow" aria-hidden="true">↗</span></a></h2>
+        <p class="section-intro">RoboAtom-Anno learns from atomic-action supervision to annotate robot videos automatically, predicting skill categories, action descriptions, and temporal boundaries. The results below show annotation performance and inference cost</p>
+        <figure class="paper-figure panel-figure">
+          <a class="figure-image" href="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/figures/annotation-progress.svg" data-figure
+             data-title="RoboAtom-Anno performance" aria-label="Enlarge RoboAtom-Anno performance">
+            <img src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/figures/annotation-progress.svg" alt="RoboAtom-Anno performance" loading="lazy" decoding="async">
+          </a>
+
+        </figure>
+        <div id="results">
+        <div class="result-panel" id="panel-annotation">
+          <div class="table-scroll" role="region" aria-label="Performance &amp; cost results table" tabindex="0">
+            <table>
+              <caption>Performance &amp; cost</caption>
+              <thead>
+                <tr>
+                  <th scope="col" rowspan="2">Model</th>
+                  <th scope="colgroup" colspan="5">RoboAtom-Bench</th>
+                  <th scope="colgroup" colspan="3">WGO-Bench Robot</th>
+                </tr>
+                <tr>
+                  <th scope="col"><abbr title="Mean temporal intersection over union">mIoU</abbr></th><th scope="col"><span class="metric-label">Temporal F1@0.7</span></th><th scope="col"><span class="metric-label">Skill F1@0.7</span></th><th scope="col">Edit score</th><th scope="col">Cost <span class="column-unit">(USD / video hour)</span></th>
+                  <th scope="col"><abbr title="Mean temporal intersection over union">mIoU</abbr></th><th scope="col"><span class="metric-label">Temporal F1@0.7</span></th><th scope="col">Cost <span class="column-unit">(USD / video hour)</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">GPT-4o</th><td>31.5</td><td>13.9</td><td>7.2</td><td>47.7</td><td>0.971</td><td>46.1</td><td>14.6</td><td>0.800</td></tr>
+                <tr><th scope="row">GPT-5.6-sol</th><td>44.0</td><td>28.0</td><td>21.4</td><td>63.4</td><td>4.330</td><td>41.9</td><td>31.3</td><td>3.375</td></tr>
+                <tr><th scope="row">Gemini 3.1 Pro</th><td>42.5</td><td>24.4</td><td>16.1</td><td>61.8</td><td>4.516</td><td>52.1</td><td>29.6</td><td>4.389</td></tr>
+                <tr><th scope="row">Qwen3.8-27B</th><td>38.4</td><td>20.1</td><td>10.9</td><td>56.6</td><td>0.103</td><td>51.3</td><td>24.3</td><td>0.096</td></tr>
+                <tr><th scope="row">Qwen3.5-9B</th><td>9.6</td><td>6.2</td><td>3.5</td><td>28.7</td><td>0.008</td><td>12.8</td><td>1.7</td><td>0.007</td></tr>
+                <tr class="our-result"><th scope="row">RoboAtom-Anno-9B</th><td>55.1</td><td>41.0</td><td>30.1</td><td>76.7</td><td>0.006</td><td>61.7</td><td>48.3</td><td>0.004</td></tr>
+                <tr class="our-result"><th scope="row">RoboAtom-Anno-27B</th><td>56.4</td><td>43.2</td><td>33.8</td><td>76.8</td><td>0.078</td><td>66.0</td><td>49.2</td><td>0.054</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <details class="metric-definitions">
+            <summary>Metric definitions</summary>
+            <dl>
+            <dt>mIoU</dt><dd>Mean temporal intersection over union between ground-truth and predicted segments, ignoring skill labels</dd>
+            <dt>Temporal F1@0.7</dt><dd>Segment detection F1 with temporal intersection over union of at least 0.7</dd>
+            <dt>Skill F1@0.7</dt><dd>Segment F1 requiring both temporal intersection over union of at least 0.7 and matching skill labels</dd>
+            <dt>Edit score</dt><dd>Skill-sequence similarity based on normalized Levenshtein distance, independent of timestamps</dd>
+            </dl>
+          </details>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section research-section" id="control" aria-labelledby="control-title">
+      <div class="content-width">
+        <h2 class="research-title" id="control-title">Dual-system execution</h2>
+        <p class="section-intro">Atomic-action supervision connects high-level planning with robot execution. System 2 selects the current action from observations and execution history, while System 1 converts that instruction into robot movements</p>
+        <figure class="paper-figure">
+          <a class="figure-image" href="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/figures/dual-system.png" data-figure
+             data-title="Dual-system execution" aria-label="Enlarge Dual-system execution">
+            <img src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/figures/dual-system.png" alt="Dual-system execution" loading="lazy" decoding="async">
+          </a>
+
+        </figure>
+        <div class="result-panel" id="panel-control">
+          <div class="table-scroll" role="region" aria-label="Downstream robot control results table" tabindex="0">
+            <table>
+              <caption>Control success rates (%)</caption>
+              <thead>
+                <tr>
+                  <th scope="col" rowspan="2">Method</th>
+                  <th scope="col" rowspan="2">LIBERO Long</th>
+                  <th scope="colgroup" colspan="5">LIBERO-Plus</th>
+                  <th scope="colgroup" colspan="3">RoboTwin</th>
+                </tr>
+                <tr>
+                  <th scope="col">Spatial</th><th scope="col">Object</th><th scope="col">Goal</th><th scope="col">Long</th><th scope="col" title="Full LIBERO-Plus suite">Overall</th>
+                  <th scope="col">Clean</th><th scope="col">Random</th><th scope="col" title="Clean/Random mean">Average</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">&pi;<sub>0.5</sub></th><td>95.00</td><td>93.01</td><td>85.23</td><td>79.93</td><td>78.56</td><td>84.05</td><td>80.70</td><td>48.04</td><td>64.37</td></tr>
+                <tr class="our-result"><th scope="row">Ours (dual system)</th><td>98.20</td><td>92.46</td><td>91.86</td><td>86.34</td><td>82.29</td><td>88.18</td><td>82.02</td><td>50.32</td><td>66.17</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section citation-section" id="citation" aria-labelledby="citation-title">
+      <div class="content-width">
+        <h2 class="research-title" id="citation-title">Citation</h2>
+        <p class="section-intro">If you use RoboAtom in your research, please cite:</p>
+        <div class="citation-actions">
+          <button class="resource-link is-available" id="copy-citation" type="button" aria-describedby="citation-status" hidden>Copy BibTeX</button>
+          <span id="citation-status" role="status" aria-live="polite"></span>
+        </div>
+        <pre class="citation-code" tabindex="0" role="region" aria-label="BibTeX citation"><code id="citation-bibtex">@misc{wei2026roboatomlargescaleatomicactionsupervision,
+      title={RoboAtom: Large-scale Atomic-Action Supervision for Robot Learning},
+      author={Xueyuan Wei and Xuanxu Wang and Xudong Li and Yuping He and Wanshui Gan and Jiaqi Peng and Wenqi Guo and Jianjun Zhou and Junting Dong and Chunhua Shen and Haoyu Guo and Mulin Yu and Tao Lu},
+      year={2026},
+      eprint={2610.40207},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2610.40207},
+}</code></pre>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="content-width footer-inner">
+      <a class="brand" href="#home"><img class="brand-icon" src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/brand/roboatom-icon.png" alt="" width="1254" height="1254">
+        <span class="wordmark-frame" aria-hidden="true"><img src="https://huggingface.co/datasets/InternRobotics/RoboAtom/resolve/main/project_media/brand/roboatom-wordmark.png" alt="" width="2060" height="763"></span>
+        <span class="visually-hidden">RoboAtom</span></a>
+      <p>Large-scale Atomic-Action Supervision for Robot Learning</p>
+      <a href="#home">Back to top</a>
+    </div>
+  </footer>
+
+
+  <dialog id="figure-dialog" class="figure-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-bar">
+      <h2 id="dialog-title">Paper figure</h2>
+      <button class="dialog-close" type="button" aria-label="Close figure viewer">&times;</button>
+    </div>
+    <div class="dialog-tools">
+      <button id="figure-zoom" type="button" aria-pressed="false">Original size</button>
+    </div>
+    <div id="figure-viewport" class="figure-viewport" role="region" aria-label="Scrollable enlarged paper figure" tabindex="0"></div>
+  </dialog>
+</body>
+</html>

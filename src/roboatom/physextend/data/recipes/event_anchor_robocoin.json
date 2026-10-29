@@ -1,0 +1,19 @@
+{
+  "name": "event_anchor_robocoin",
+  "parent": "offset_snap_small_groups_b",
+  "method": "event_anchor",
+  "params": {
+    "RoboCOIN|agilex_cobot_decoupled_magic": [
+      1.0,
+      1.0
+    ],
+    "RoboCOIN|realman_rmc_aidal": [
+      2.0,
+      1.0
+    ],
+    "RoboMind2|ur": [
+      2.0,
+      1.0
+    ]
+  }
+}

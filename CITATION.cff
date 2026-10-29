@@ -1,0 +1,73 @@
+cff-version: 1.2.0
+message: "If you use RoboAtom, please cite it as below."
+title: "RoboAtom: Large-scale Atomic-Action Supervision for Robot Learning"
+type: software
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/InternRobotics/RoboAtom"
+url: "https://internrobotics.github.io/RoboAtom/"
+authors:
+  - given-names: Xueyuan
+    family-names: Wei
+  - given-names: Xuanxu
+    family-names: Wang
+  - given-names: Xudong
+    family-names: Li
+  - given-names: Yuping
+    family-names: He
+  - given-names: Wanshui
+    family-names: Gan
+  - given-names: Jiaqi
+    family-names: Peng
+  - given-names: Wenqi
+    family-names: Guo
+  - given-names: Jianjun
+    family-names: Zhou
+  - given-names: Junting
+    family-names: Dong
+  - given-names: Chunhua
+    family-names: Shen
+  - given-names: Haoyu
+    family-names: Guo
+  - given-names: Mulin
+    family-names: Yu
+  - given-names: Tao
+    family-names: Lu
+
+preferred-citation:
+  type: article
+  title: "RoboAtom: Large-scale Atomic-Action Supervision for Robot Learning"
+  journal: arXiv
+  year: 2026
+  url: "https://arxiv.org/abs/2610.40207"
+  identifiers:
+    - type: other
+      value: "arXiv:2610.40207"
+      description: arXiv preprint
+  authors:
+    - given-names: Xueyuan
+      family-names: Wei
+    - given-names: Xuanxu
+      family-names: Wang
+    - given-names: Xudong
+      family-names: Li
+    - given-names: Yuping
+      family-names: He
+    - given-names: Wanshui
+      family-names: Gan
+    - given-names: Jiaqi
+      family-names: Peng
+    - given-names: Wenqi
+      family-names: Guo
+    - given-names: Jianjun
+      family-names: Zhou
+    - given-names: Junting
+      family-names: Dong
+    - given-names: Chunhua
+      family-names: Shen
+    - given-names: Haoyu
+      family-names: Guo
+    - given-names: Mulin
+      family-names: Yu
+    - given-names: Tao
+      family-names: Lu

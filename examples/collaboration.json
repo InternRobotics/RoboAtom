@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "master_input_json": "annotation.jsonl",
+  "merged_output_json": "outputs/merged.jsonl",
+  "annotators": [
+    {
+      "id": "annotator_a",
+      "start_index": 0,
+      "count": 1,
+      "output_json": "outputs/annotator_a.jsonl"
+    },
+    {
+      "id": "reviewer",
+      "role": "reviewer",
+      "output_json": "outputs/reviewer.jsonl"
+    }
+  ]
+}

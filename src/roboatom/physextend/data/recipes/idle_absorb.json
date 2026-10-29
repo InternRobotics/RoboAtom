@@ -1,0 +1,15 @@
+{
+  "name": "idle_absorb",
+  "parent": "secondary_short_segment_guard",
+  "method": "idle_absorb",
+  "params": {
+    "InternData-A1|lift2": [
+      0.1,
+      1.0
+    ],
+    "RoboMindV2|agilex": [
+      0.2,
+      1.0
+    ]
+  }
+}

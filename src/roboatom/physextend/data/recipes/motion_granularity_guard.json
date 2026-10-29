@@ -1,0 +1,8 @@
+{
+  "name": "motion_granularity_guard",
+  "parent": "event_contrast_duration_guard",
+  "method": "sequence_event_prior",
+  "event_weight": 1,
+  "duration_weight": 0.5,
+  "preserve_motion_granularity": true
+}

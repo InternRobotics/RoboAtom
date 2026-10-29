@@ -1,0 +1,8 @@
+{
+  "name": "majority_sequence",
+  "parent": "group_start",
+  "method": "sequence_vote",
+  "params": {
+    "rule": "majority_shortest"
+  }
+}

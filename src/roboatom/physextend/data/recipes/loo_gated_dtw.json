@@ -1,0 +1,17 @@
+{
+  "name": "loo_gated_dtw",
+  "parent": "ur_event_transcript",
+  "method": "loo_dtw",
+  "params": {
+    "RoboDojo": [
+      "jo",
+      0.3,
+      0.6
+    ],
+    "agibotworld2026": [
+      "jo",
+      0.3,
+      0.9
+    ]
+  }
+}

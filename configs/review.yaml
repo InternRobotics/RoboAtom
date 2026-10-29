@@ -1,0 +1,3 @@
+annotation_config: annotation.ini
+base_url: ""  # Set your OpenAI-compatible API endpoint.
+model: ""     # Set the model served by that endpoint.

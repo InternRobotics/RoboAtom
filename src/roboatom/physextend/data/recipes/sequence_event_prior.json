@@ -1,0 +1,6 @@
+{
+  "name": "sequence_event_prior",
+  "parent": "weak_channel_filter",
+  "method": "sequence_event_prior",
+  "event_weight": 1
+}

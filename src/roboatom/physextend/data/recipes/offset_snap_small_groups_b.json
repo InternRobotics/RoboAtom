@@ -1,0 +1,23 @@
+{
+  "name": "offset_snap_small_groups_b",
+  "parent": "loo_gated_dtw",
+  "method": "offset_snap",
+  "params": {
+    "3f|lift2": [
+      1.5,
+      0.47
+    ],
+    "EBench": [
+      0.6,
+      0.6
+    ],
+    "RoboMind2|franka": [
+      0.3,
+      0.33
+    ],
+    "agibotworld2026": [
+      0.3,
+      0.33
+    ]
+  }
+}

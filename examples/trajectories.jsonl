@@ -1,0 +1,1 @@
+{"episode_id": "target", "task_id": "move_block", "num_frames": 150, "fps": 30.0, "signals_path": "target.parquet", "frame_interval": "closed"}

@@ -1,0 +1,7 @@
+{
+  "name": "sequence_duration_support",
+  "parent": "sequence_event_prior",
+  "method": "sequence_event_prior",
+  "event_weight": 1,
+  "duration_weight": 0.5
+}

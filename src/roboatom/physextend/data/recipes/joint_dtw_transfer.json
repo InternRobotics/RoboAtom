@@ -1,0 +1,23 @@
+{
+  "name": "joint_dtw_transfer",
+  "parent": "event_anchor",
+  "method": "joint_dtw",
+  "params": {
+    "RoboMind2|agilex": [
+      0.2,
+      1.0
+    ],
+    "RoboMindV2|agilex": [
+      0.2,
+      1.0
+    ],
+    "EBench": [
+      0.08,
+      0.5
+    ],
+    "RoboCasa": [
+      0.08,
+      1.0
+    ]
+  }
+}

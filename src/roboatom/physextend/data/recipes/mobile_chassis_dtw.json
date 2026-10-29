@@ -1,0 +1,19 @@
+{
+  "name": "mobile_chassis_dtw",
+  "parent": "dtw_group_selection",
+  "method": "joint_dtw",
+  "params": {
+    "RoboMindV2|agilex_mobile": [
+      0.3,
+      1.0,
+      null,
+      "jco"
+    ],
+    "RoboMindV2|ark": [
+      0.1,
+      1.0,
+      null,
+      "jo"
+    ]
+  }
+}

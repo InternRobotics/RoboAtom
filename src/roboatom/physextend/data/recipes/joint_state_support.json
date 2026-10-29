@@ -1,0 +1,5 @@
+{
+  "name": "joint_state_support",
+  "parent": "motion_granularity_guard",
+  "method": "joint_state_refine"
+}
