@@ -1,0 +1,19 @@
+{
+  "name": "event_anchor",
+  "parent": "short_segment_guard",
+  "method": "event_anchor",
+  "params": {
+    "InternData-A1|franka": [
+      1.0,
+      3.0
+    ],
+    "RoboMind2|franka": [
+      0.5,
+      1.0
+    ],
+    "InternData-A1|genie1": [
+      0.5,
+      1.0
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="102" height="36" viewBox="0 0 102 36" role="img" aria-labelledby="title">
+  <title id="title">Paper</title>
+  <rect x=".5" y="2.5" width="101" height="31" rx="6" fill="#fff9e9" stroke="#dec688"/>
+  <g transform="translate(11 7) scale(.916667)" color="#92701d" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 12h8M8 16h8"/>
+  </g>
+  <text x="42" y="23" fill="#92701d" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="600">Paper</text>
+</svg>

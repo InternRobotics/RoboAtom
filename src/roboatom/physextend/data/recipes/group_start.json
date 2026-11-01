@@ -1,0 +1,10 @@
+{
+  "name": "group_start",
+  "parent": "local_opening_search",
+  "method": "compose",
+  "routes": {
+    "RoboMindV2|franka": "joint_opening_consistency",
+    "RoboMindV2|ur": "joint_opening_consistency",
+    "EBench": "compatible_reference_group"
+  }
+}

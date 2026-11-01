@@ -1,0 +1,20 @@
+{
+  "name": "mobile_transition_bias",
+  "parent": "idle_absorb",
+  "method": "transition_shift",
+  "params": {
+    "RoboMindV2|agilex_mobile": {
+      "move>place": 0.2,
+      "move>pick": -0.13,
+      "place>pick": -0.68,
+      "pick>place": -0.18,
+      "pick>pick": -0.67,
+      "place>place": -0.52
+    },
+    "RoboMindV2|ark": {
+      "place>pick": -0.22,
+      "place>place": -0.12,
+      "pick>pick": -1.07
+    }
+  }
+}

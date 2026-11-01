@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="122" height="36" viewBox="0 0 122 36" role="img" aria-labelledby="title">
+  <title id="title">Dataset</title>
+  <rect x=".5" y="2.5" width="121" height="31" rx="6" fill="#fff8df" stroke="#e4c86c"/>
+  <g transform="translate(11 7) scale(.916667)" color="#80621d" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="10.5" r="8.5" fill="#ffd85d" stroke="#b98527" stroke-width="1"/>
+    <path d="M7.5 9.5h.1m8.8 0h.1" fill="none" stroke="#47324b" stroke-width="2.6"/>
+    <path d="M9 13c1.8 2.1 4.2 2.1 6 0" fill="none" stroke="#47324b" stroke-width="1.4"/>
+    <path d="M3 15c-2-1-2 1-.5 3l4 3c2 1 4-1 2-3l-3-3c-1-1-2 0-1 1m16-1c2-1 2 1 .5 3l-4 3c-2 1-4-1-2-3l3-3c1-1 2 0 1 1" fill="#ffd85d" stroke="#b98527" stroke-width="1"/>
+  </g>
+  <text x="42" y="23" fill="#80621d" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="600">Dataset</text>
+</svg>

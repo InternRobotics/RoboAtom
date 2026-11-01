@@ -1,0 +1,5 @@
+{
+  "name": "compatible_reference_group",
+  "parent": "motion_granularity_guard",
+  "method": "compatible_reference_group"
+}

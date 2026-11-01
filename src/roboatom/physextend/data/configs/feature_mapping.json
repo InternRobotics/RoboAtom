@@ -1,0 +1,501 @@
+{
+  "schema_version": 1,
+  "datasets": {
+    "3f": [
+      {
+        "column": "actions.left_gripper.position",
+        "indices": "all",
+        "source": "action",
+        "family": "gripper",
+        "side": "left",
+        "quantity": "position"
+      },
+      {
+        "column": "actions.right_gripper.position",
+        "indices": "all",
+        "source": "action",
+        "family": "gripper",
+        "side": "right",
+        "quantity": "position"
+      },
+      {
+        "column": "states.left_gripper.position",
+        "indices": "all",
+        "source": "state",
+        "family": "gripper",
+        "side": "left",
+        "quantity": "position"
+      },
+      {
+        "column": "states.right_gripper.position",
+        "indices": "all",
+        "source": "state",
+        "family": "gripper",
+        "side": "right",
+        "quantity": "position"
+      },
+      {
+        "column": "actions.left_joint.position",
+        "indices": "all",
+        "source": "action",
+        "family": "joint",
+        "side": "left",
+        "quantity": "position"
+      },
+      {
+        "column": "actions.right_joint.position",
+        "indices": "all",
+        "source": "action",
+        "family": "joint",
+        "side": "right",
+        "quantity": "position"
+      },
+      {
+        "column": "states.left_joint.position",
+        "indices": "all",
+        "source": "state",
+        "family": "joint",
+        "side": "left",
+        "quantity": "position"
+      },
+      {
+        "column": "states.right_joint.position",
+        "indices": "all",
+        "source": "state",
+        "family": "joint",
+        "side": "right",
+        "quantity": "position"
+      }
+    ],
+    "AgiBot": [
+      {
+        "column": "actions.effector.position",
+        "indices": "all",
+        "source": "action",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "actions.joint.position",
+        "indices": "all",
+        "source": "action",
+        "family": "joint",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "actions.robot.velocity",
+        "indices": "all",
+        "source": "action",
+        "family": "base",
+        "side": "unknown",
+        "quantity": "velocity"
+      },
+      {
+        "column": "observation.states.effector.position",
+        "indices": "all",
+        "source": "state",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "observation.states.joint.current_value",
+        "indices": "all",
+        "source": "state",
+        "family": "joint",
+        "side": "unknown",
+        "quantity": "current"
+      },
+      {
+        "column": "observation.states.joint.position",
+        "indices": "all",
+        "source": "state",
+        "family": "joint",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "observation.states.robot.position",
+        "indices": "all",
+        "source": "state",
+        "family": "base",
+        "side": "unknown",
+        "quantity": "position"
+      }
+    ],
+    "EBench": [
+      {
+        "column": "action.base",
+        "indices": "all",
+        "source": "action",
+        "family": "base",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "action.base_delta",
+        "indices": "all",
+        "source": "action",
+        "family": "base",
+        "side": "unknown",
+        "quantity": "delta"
+      },
+      {
+        "column": "action.ee_pose",
+        "indices": "all",
+        "source": "action",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "action.ee_pose_delta",
+        "indices": "all",
+        "source": "action",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "delta"
+      },
+      {
+        "column": "action.gripper",
+        "indices": "all",
+        "source": "action",
+        "family": "gripper",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "action.joints",
+        "indices": "all",
+        "source": "action",
+        "family": "joint",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "action.joints_delta",
+        "indices": "all",
+        "source": "action",
+        "family": "joint",
+        "side": "unknown",
+        "quantity": "delta"
+      },
+      {
+        "column": "state.base",
+        "indices": "all",
+        "source": "state",
+        "family": "base",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "state.ee_pose",
+        "indices": "all",
+        "source": "state",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "state.gripper",
+        "indices": "all",
+        "source": "state",
+        "family": "gripper",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "state.joints",
+        "indices": "all",
+        "source": "state",
+        "family": "joint",
+        "side": "unknown",
+        "quantity": "position"
+      }
+    ],
+    "LIBERO": [
+      {
+        "column": "observation.states.ee_state",
+        "indices": "all",
+        "source": "state",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "observation.states.gripper_state",
+        "indices": "all",
+        "source": "state",
+        "family": "gripper",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "observation.states.joint_state",
+        "indices": "all",
+        "source": "state",
+        "family": "joint",
+        "side": "unknown",
+        "quantity": "position"
+      }
+    ],
+    "InternData-A1": [
+      {
+        "column": "actions.gripper.pose",
+        "indices": "all",
+        "source": "action",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "master_actions.gripper.pose",
+        "indices": "all",
+        "source": "action",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "states.gripper.pose",
+        "indices": "all",
+        "source": "state",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      }
+    ],
+    "RoboCOIN": [
+      {
+        "column": "gripper_activity_state",
+        "indices": "all",
+        "source": "state",
+        "family": "other_motion",
+        "side": "both",
+        "quantity": "unknown"
+      },
+      {
+        "column": "gripper_mode_action",
+        "indices": "all",
+        "source": "action",
+        "family": "other_motion",
+        "side": "both",
+        "quantity": "unknown"
+      },
+      {
+        "column": "gripper_mode_state",
+        "indices": "all",
+        "source": "state",
+        "family": "other_motion",
+        "side": "both",
+        "quantity": "unknown"
+      }
+    ],
+    "RoboCasa": [
+      {
+        "column": "states.gripper.pos",
+        "indices": "all",
+        "source": "state",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "states.gripper.quat",
+        "indices": "all",
+        "source": "state",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      }
+    ],
+    "RoboDojo": [],
+    "RoboMind2": [
+      {
+        "column": "actions.joint_effort_left",
+        "indices": "all",
+        "source": "action",
+        "family": "joint",
+        "side": "left",
+        "quantity": "effort"
+      },
+      {
+        "column": "actions.joint_effort_right",
+        "indices": "all",
+        "source": "action",
+        "family": "joint",
+        "side": "right",
+        "quantity": "effort"
+      },
+      {
+        "column": "actions.joint_velocity_left",
+        "indices": "all",
+        "source": "action",
+        "family": "joint",
+        "side": "left",
+        "quantity": "velocity"
+      },
+      {
+        "column": "actions.joint_velocity_right",
+        "indices": "all",
+        "source": "action",
+        "family": "joint",
+        "side": "right",
+        "quantity": "velocity"
+      },
+      {
+        "column": "observation.states.joint_effort_left",
+        "indices": "all",
+        "source": "state",
+        "family": "joint",
+        "side": "left",
+        "quantity": "effort"
+      },
+      {
+        "column": "observation.states.joint_effort_right",
+        "indices": "all",
+        "source": "state",
+        "family": "joint",
+        "side": "right",
+        "quantity": "effort"
+      },
+      {
+        "column": "observation.states.joint_velocity_left",
+        "indices": "all",
+        "source": "state",
+        "family": "joint",
+        "side": "left",
+        "quantity": "velocity"
+      },
+      {
+        "column": "observation.states.joint_velocity_right",
+        "indices": "all",
+        "source": "state",
+        "family": "joint",
+        "side": "right",
+        "quantity": "velocity"
+      }
+    ],
+    "RoboTwin": [],
+    "rh20t": [
+      {
+        "column": "action",
+        "indices": {
+          "start": 0,
+          "stop": 6
+        },
+        "source": "action",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "action",
+        "indices": [
+          6
+        ],
+        "source": "action",
+        "family": "gripper",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "state",
+        "indices": {
+          "start": 0,
+          "stop": 6
+        },
+        "source": "state",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "state",
+        "indices": [
+          6
+        ],
+        "source": "state",
+        "family": "gripper",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "other_information.action_delta_tcp_pose",
+        "indices": {
+          "start": 0,
+          "stop": 6
+        },
+        "source": "action",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "delta"
+      },
+      {
+        "column": "other_information.action_delta_tcp_pose",
+        "indices": [
+          6
+        ],
+        "source": "action",
+        "family": "gripper",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "other_information.action_tcp_pose",
+        "indices": {
+          "start": 0,
+          "stop": 6
+        },
+        "source": "action",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "other_information.action_tcp_pose",
+        "indices": [
+          6
+        ],
+        "source": "action",
+        "family": "gripper",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "other_information.gripper_command",
+        "indices": "all",
+        "source": "action",
+        "family": "gripper",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "other_information.observation_gripper_open_state",
+        "indices": "all",
+        "source": "state",
+        "family": "gripper",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "other_information.observation_gripper_pose6d",
+        "indices": "all",
+        "source": "state",
+        "family": "eef_pose",
+        "side": "unknown",
+        "quantity": "position"
+      },
+      {
+        "column": "other_information.observation_joint_position",
+        "indices": "all",
+        "source": "state",
+        "family": "joint",
+        "side": "unknown",
+        "quantity": "position"
+      }
+    ]
+  }
+}

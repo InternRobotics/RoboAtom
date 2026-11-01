@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="146" height="36" viewBox="0 0 146 36" role="img" aria-labelledby="title">
+  <title id="title">Project page</title>
+  <rect x=".5" y="2.5" width="145" height="31" rx="6" fill="#f6f2fb" stroke="#ddd1ef"/>
+  <g transform="translate(11 7) scale(.916667)" color="#533392" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/><path d="M2 12h20"/>
+  </g>
+  <text x="42" y="23" fill="#533392" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="600">Project page</text>
+</svg>

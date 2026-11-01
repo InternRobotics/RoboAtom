@@ -1,0 +1,8 @@
+{
+  "name": "event_contrast_duration_guard",
+  "parent": "sequence_duration_support",
+  "method": "sequence_event_prior",
+  "event_weight": 1,
+  "duration_weight": 0.5,
+  "duration_requires_event_contrast": true
+}

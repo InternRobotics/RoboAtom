@@ -1,0 +1,19 @@
+{
+  "name": "secondary_short_segment_guard",
+  "parent": "tienkung_hand_dtw",
+  "method": "merge_short",
+  "params": {
+    "RoboMindV2|ur": [
+      0.3,
+      "longer"
+    ],
+    "RoboCOIN|realman_rmc_aidal": [
+      1.0,
+      "shorter"
+    ],
+    "InternData-A1|genie1": [
+      1.0,
+      "shorter"
+    ]
+  }
+}

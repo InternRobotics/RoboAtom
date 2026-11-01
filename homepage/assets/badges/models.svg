@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="116" height="36" viewBox="0 0 116 36" role="img" aria-labelledby="title">
+  <title id="title">Models</title>
+  <rect x=".5" y="2.5" width="115" height="31" rx="6" fill="#fff0f6" stroke="#e6b4ca"/>
+  <g transform="translate(11 7) scale(.916667)" color="#784570" stroke="#6e459e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="7" width="16" height="14" rx="4" fill="#e4d5fb"/>
+    <path d="M12 3v4M9 3h6M1 12h3M20 12h3M8 17h8" fill="none"/>
+    <circle cx="9" cy="12" r="1.5" fill="#f1bd4d"/><circle cx="15" cy="12" r="1.5" fill="#f1bd4d"/>
+  </g>
+  <text x="42" y="23" fill="#784570" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="600">Models</text>
+</svg>

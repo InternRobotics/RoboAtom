@@ -1,0 +1,9 @@
+{
+  "remote_roots": {
+    "custom": "remote:bucket/dataset"
+  },
+  "local_roots": {
+    "custom": "../data/custom"
+  },
+  "uri_migrations": {}
+}

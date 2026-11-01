@@ -1,0 +1,18 @@
+{
+  "name": "single",
+  "decoder": "multi",
+  "aggregation": "weighted_median",
+  "phase_weight": 0,
+  "centered_weight": 1,
+  "sensor_scale": 1,
+  "sensor_power": 1,
+  "anchor_weight": 2,
+  "local_signature_weight": 2,
+  "duration_consistency_guard": 0.5,
+  "motion_weight": 2,
+  "anchor_blend": 0.25,
+  "anchor_min_confidence": 0.85,
+  "anchor_agreement_scale": 2,
+  "sensor_activity_agreement": true,
+  "sensor_agreement_boost": 3
+}

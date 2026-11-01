@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subtask Annotation Studio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}" />
+  </head>
+  <body>
+    <div class="app-shell">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <span class="app-logo">✦</span>
+          <span class="app-name">Subtask Annotator</span>
+          <div class="divider-v"></div>
+          <div class="nav-cluster">
+            <button id="prevVideoBtn" class="btn btn-icon" title="上一条视频 (P)">&#8592;</button>
+            <span id="videoPosition" class="nav-position">-</span>
+            <button id="nextVideoBtn" class="btn btn-icon" title="下一条视频 (N)">&#8594;</button>
+          </div>
+          <input
+            id="videoJumpInput"
+            type="text"
+            class="video-jump-input"
+            inputmode="numeric"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="跳到 #"
+            title="输入编号后回车跳转"
+            aria-label="跳转到第几条数据"
+          />
+          <select id="videoSelect" class="video-select" aria-label="选择视频"></select>
+        </div>
+
+        <div class="topbar-right">
+          <div class="status-cluster" id="statusCluster" aria-label="当前状态">
+            <span id="statusDraft" class="status-badge status-draft">草稿</span>
+            <span id="statusCommitted" class="status-badge status-committed">已应用未保存</span>
+            <span id="statusSaved" class="status-badge status-saved">已保存到文件</span>
+          </div>
+          <span id="statusHint" class="status-hint">来自当前文件</span>
+          <div id="annotatorCluster" class="annotator-cluster hidden" aria-label="当前标注员">
+            <span class="annotator-pill">
+              <span class="annotator-pill-label">标注员</span>
+              <strong id="currentAnnotatorName">-</strong>
+            </span>
+            <button id="switchAnnotatorBtn" class="btn btn-ghost btn-sm" title="切换标注员">
+              切换标注员
+            </button>
+          </div>
+          <div class="divider-v"></div>
+          <button
+            id="advancedToggleBtn"
+            class="btn btn-ghost btn-sm"
+            title="显示或隐藏高级设置"
+            aria-expanded="false"
+            aria-controls="advancedBar"
+          >
+            高级设置
+          </button>
+          <button
+            id="infoPanelToggle"
+            class="btn btn-ghost btn-sm"
+            title="显示或隐藏视频信息"
+            aria-expanded="false"
+            aria-controls="infoPanel"
+          >
+            信息
+          </button>
+          <button id="undoBtn" class="btn btn-ghost btn-sm" title="撤销 (Ctrl+Z)">撤销</button>
+          <button id="redoBtn" class="btn btn-ghost btn-sm" title="重做 (Ctrl+Y / Ctrl+Shift+Z)">重做</button>
+          <button id="applyBtn" class="btn btn-secondary btn-sm" title="应用当前条 (Ctrl+Enter)">
+            应用当前条
+          </button>
+          <button id="saveBtn" class="btn btn-primary btn-sm" title="保存到文件 (Ctrl+S)">保存到文件</button>
+        </div>
+      </header>
+
+      <section id="advancedBar" class="advanced-bar hidden">
+        <div class="advanced-bar-inner">
+          <div class="advanced-bar-title">高级设置</div>
+          <div class="input-json-row">
+            <input
+              id="inputJsonField"
+              type="text"
+              class="json-path-input"
+              placeholder="输入 JSON / JSONL 路径"
+              value="{{ input_json }}"
+            />
+            <button id="loadJsonBtn" class="btn btn-ghost btn-sm">加载文件</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAIN LAYOUT -->
+      <main class="main-layout" id="mainLayout">
+
+        <!-- LEFT: 视频区 -->
+        <section class="col-video">
+
+          <div class="video-wrap" id="videoWrap">
+            <div id="videoGrid" class="video-grid video-grid-1"></div>
+            <div class="video-overlay">
+              <div class="overlay-left">
+                <span id="activeViewBadge" class="overlay-pill pill-view">view -</span>
+                <span id="segmentBadge" class="overlay-pill pill-accent">seg -</span>
+                <span id="activeSegmentRange" class="overlay-pill pill-muted">f - &#8594; -</span>
+              </div>
+              <div class="overlay-right">
+                <span id="playbackTime" class="overlay-pill pill-dark">00:00.000</span>
+              </div>
+            </div>
+            <div id="videoError" class="video-error hidden"></div>
+          </div>
+
+          <div class="transport-bar">
+            <div class="transport-top-row">
+              <div class="transport-controls">
+                <button id="jumpBack10Btn" class="btn btn-ghost btn-sm" title="后退 10 帧 (Ctrl+←)">-10f</button>
+                <button id="prevFrameBtn" class="btn btn-icon-sm" title="后退 1 帧 (, / ←)">-1f</button>
+                <button id="playPauseBtn" class="btn btn-play" title="播放/暂停 (Space)">
+                  <span id="playIcon">&#9654;</span>
+                  <span id="pauseIcon" class="hidden">&#9646;&#9646;</span>
+                </button>
+                <button id="nextFrameBtn" class="btn btn-icon-sm" title="前进 1 帧 (. / →)">+1f</button>
+                <button id="jumpForward10Btn" class="btn btn-ghost btn-sm" title="前进 10 帧 (Ctrl+→)">+10f</button>
+                <span id="frameLabel" class="frame-counter">f -/-</span>
+                <span id="selectionHint" class="hint-chip">选择片段</span>
+              </div>
+
+              <div class="transport-meta">
+                <label class="transport-checkbox" for="autoStopToggle">
+                  <input id="autoStopToggle" type="checkbox" checked />
+                  <span>到段尾自动停</span>
+                </label>
+                <label class="transport-checkbox" for="loopSegmentToggle">
+                  <input id="loopSegmentToggle" type="checkbox" />
+                  <span>单段循环</span>
+                </label>
+                <label class="transport-select-group" for="playbackRateSelect">
+                  <span>倍速</span>
+                  <select id="playbackRateSelect" aria-label="播放倍速">
+                    <option value="0.5">0.5x</option>
+                    <option value="1" selected>1x</option>
+                    <option value="2">2x</option>
+                  </select>
+                </label>
+                <label class="transport-select-group" for="timelineZoomSelect">
+                  <span>时间线</span>
+                  <select id="timelineZoomSelect" aria-label="时间线缩放">
+                    <option value="global" selected>全局</option>
+                    <option value="60s">60s</option>
+                    <option value="10s">10s</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div class="transport-actions-row">
+              <div class="segment-transport-actions">
+                <button id="playSegmentBtn" class="btn btn-secondary btn-sm" title="从当前片段播放到结束">
+                  播放当前段
+                </button>
+                <button id="jumpSegmentStartBtn" class="btn btn-ghost btn-sm" title="跳到起始帧 (Shift+←)">
+                  跳段首
+                </button>
+                <button id="jumpSegmentEndBtn" class="btn btn-ghost btn-sm" title="跳到结束帧 (Shift+→)">
+                  跳段尾
+                </button>
+              </div>
+            </div>
+
+            <div id="chapterBar" class="chapter-bar"></div>
+
+            <div id="sliderWrap" class="slider-wrap">
+              <div id="currentFrameNeedle" class="frame-needle"></div>
+              <input id="frameSlider" type="range" min="0" max="0" value="0" class="frame-slider" />
+              <div id="boundaryHandles" class="boundary-handles"></div>
+              <div id="boundaryMarkers" class="boundary-markers"></div>
+            </div>
+          </div>
+
+        </section>
+
+        <div
+          id="panelResizeHandle"
+          class="panel-resize-handle"
+          role="separator"
+          aria-label="调整右侧标注面板宽度"
+          aria-orientation="vertical"
+          tabindex="0"
+        ></div>
+
+        <!-- RIGHT: 标注区 -->
+        <aside class="col-annotation" id="annotationPanel">
+
+          <section id="itemStatusCard" class="item-status-card" aria-live="polite">
+            <div class="item-status-main">
+              <span id="itemStatusIcon" class="item-status-icon" aria-hidden="true">✓</span>
+              <div class="item-status-copy">
+                <div class="item-status-title-row">
+                  <span class="item-status-label">整条状态</span>
+                  <span id="itemStatusBadge" class="item-status-badge">正常</span>
+                </div>
+                <p id="itemStatusDescription" class="item-status-description">该条数据正常参与标注与合并。</p>
+                <p id="itemStatusNote" class="item-status-note hidden"></p>
+              </div>
+            </div>
+            <div id="itemStatusNormalActions" class="item-status-actions">
+              <button id="discardItemBtn" class="btn btn-ghost btn-xs">标记为丢弃</button>
+            </div>
+            <div id="itemStatusDiscardedActions" class="item-status-actions hidden">
+              <button id="restoreItemBtn" class="btn btn-ghost btn-xs">恢复此条</button>
+            </div>
+          </section>
+
+          <!-- ① 当前片段编辑器 -->
+          <section class="panel panel-editor" id="editorPanel">
+            <div class="panel-header">
+              <div class="panel-title-row">
+                <span class="panel-label">当前片段</span>
+                <span id="activeSegmentMeta" class="seg-badge">seg -</span>
+              </div>
+            </div>
+
+            <div id="activeEditorEmpty" class="editor-empty">
+              <p>请选择一个片段，或在当前帧按 <kbd>S</kbd> 进行切分</p>
+            </div>
+
+            <div id="activeEditorBody" class="editor-body hidden">
+
+              <div class="seg-info-bar">
+                <div class="seg-info-item">
+                  <span class="info-key">Start</span>
+                  <strong id="activeStartValue">-</strong>
+                </div>
+                <span class="info-arrow">&#8594;</span>
+                <div class="seg-info-item">
+                  <span class="info-key">End</span>
+                  <strong id="activeEndValue">-</strong>
+                </div>
+                <div class="info-sep-v"></div>
+                <div class="seg-info-item">
+                  <span class="info-key">时长</span>
+                  <strong id="activeDurationValue">-</strong>
+                </div>
+                <div class="info-sep-v"></div>
+                <div class="seg-info-item">
+                  <span class="info-key">当前帧</span>
+                  <strong id="activeCurrentFrameValue">-</strong>
+                </div>
+              </div>
+
+              <div id="modelReviewPanel" class="model-review-panel hidden">
+                <div class="model-review-header">
+                  <span id="modelReviewVerdict" class="model-review-verdict">未复审</span>
+                  <span id="modelReviewCount" class="model-review-count">0 个问题</span>
+                </div>
+                <div id="modelReviewIssues" class="model-review-issues"></div>
+              </div>
+
+              <div class="form-fields">
+                <label class="field-block">
+                  <span class="field-label">
+                    Action Text
+                    <span class="field-hint">Enter 换行，Ctrl+Enter 应用当前条</span>
+                  </span>
+                  <input id="actionTextFilterInput" type="text" placeholder="搜索 action text 选项" />
+                  <select id="activeActionSelect" aria-label="Action Text 选择"></select>
+                  <textarea
+                    id="activeActionInput"
+                    rows="3"
+                    spellcheck="false"
+                    placeholder="描述该片段的动作，e.g. Pick up the red cup"
+                  ></textarea>
+                </label>
+
+                <label class="field-block">
+                  <span class="field-label">Skill</span>
+                  <input id="skillFilterInput" type="text" placeholder="搜索 skill" />
+                  <select id="activeSkillSelect" aria-label="Skill 选择"></select>
+                  <div id="skillConfigHint" class="field-warning-note hidden">
+                    当前 Skill 不在候选中，请确认是否需要调整
+                  </div>
+                </label>
+              </div>
+
+              <div class="editor-actions">
+                <button id="addSegmentBtn" class="btn btn-split" title="在当前帧切分 (S)">
+                  &#9135; 在当前帧切分
+                </button>
+                <div class="editor-actions-secondary">
+                  <button id="setStartBtn" class="btn btn-ghost btn-xs" title="设置起始帧 ([)">[ 设为起点</button>
+                  <button id="setEndBtn" class="btn btn-ghost btn-xs" title="设置结束帧 (])">设为终点 ]</button>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ② 分段列表 -->
+          <section class="panel panel-segments">
+            <div class="panel-header">
+              <div class="panel-title-row">
+                <span class="panel-label">分段列表</span>
+                <span id="timelineSummary" class="count-badge">0 段</span>
+              </div>
+              <div class="panel-header-actions">
+                <button id="prevIncompleteBtn" class="btn btn-ghost btn-xs" title="跳到上一未完成片段">
+                  上一未完成
+                </button>
+                <button id="nextIncompleteBtn" class="btn btn-ghost btn-xs" title="跳到下一未完成片段">
+                  下一未完成
+                </button>
+              </div>
+            </div>
+
+            <div id="segmentRows" class="segment-list"></div>
+          </section>
+
+          <!-- ③ 视频信息（可折叠） -->
+          <section class="panel panel-info hidden" id="infoPanel">
+            <div class="panel-header">
+              <div class="panel-title-row">
+                <span class="panel-label">视频信息</span>
+                <div class="info-summary-inline">
+                  <span id="episodeValueInline" class="info-inline-val">-</span>
+                  <span class="info-inline-sep">·</span>
+                  <span id="framesValueInline" class="info-inline-val">-f</span>
+                </div>
+              </div>
+            </div>
+
+            <div id="infoPanelBody" class="info-panel-body">
+              <div class="info-grid">
+                <div class="info-tile">
+                  <span class="info-tile-label">Episode</span>
+                  <strong id="episodeValue">-</strong>
+                </div>
+                <div class="info-tile">
+                  <span class="info-tile-label">Frames</span>
+                  <strong id="framesValue">-</strong>
+                </div>
+                <div class="info-tile">
+                  <span class="info-tile-label">FPS</span>
+                  <strong id="fpsValue">-</strong>
+                </div>
+                <div class="info-tile">
+                  <span class="info-tile-label">Segments</span>
+                  <strong id="segmentCountValue">-</strong>
+                </div>
+                <div class="info-tile">
+                  <span class="info-tile-label">Incomplete</span>
+                  <strong id="incompleteCountValue">-</strong>
+                </div>
+                <div class="info-tile">
+                  <span class="info-tile-label">Avg Seg Len</span>
+                  <strong id="avgSegmentLenValue">-</strong>
+                </div>
+              </div>
+
+              <label class="field-block">
+                <span class="field-label">Video Path</span>
+                <div id="pathValue" class="path-box mono">-</div>
+              </label>
+
+              <label class="field-block" for="tasksInput">
+                <span class="field-label">Task List</span>
+                <textarea id="tasksInput" rows="3" spellcheck="false" placeholder="每行一个 task"></textarea>
+              </label>
+
+              <p id="itemError" class="error-text hidden"></p>
+            </div>
+          </section>
+
+        </aside>
+      </main>
+
+      <!-- FOOTER: 快捷键速查 -->
+      <footer class="footnote">
+        <div class="footer-paths">
+          <span class="path-item">In: <code id="inputPath">{{ input_json }}</code></span>
+          <span class="path-item">Out: <code id="outputPath">{{ output_json }}</code></span>
+        </div>
+        <div class="footer-shortcuts">
+          <span class="shortcut-group" data-shortcut="play"><kbd>Space</kbd> 播放</span>
+          <span class="shortcut-group" data-shortcut="frame"><kbd>←</kbd><kbd>→</kbd> 调帧 · <kbd>Ctrl</kbd> ×10</span>
+          <span class="shortcut-group" data-shortcut="jumpEdge"><kbd>Shift</kbd><kbd>←</kbd><kbd>→</kbd> 跳段首尾</span>
+          <span class="shortcut-group" data-shortcut="segment"><kbd>↑</kbd><kbd>↓</kbd> 切换片段 · <kbd>N</kbd>/<kbd>P</kbd> 切换视频</span>
+          <span class="shortcut-group" data-shortcut="commit"><kbd>Ctrl</kbd><kbd>Enter</kbd> 应用</span>
+          <span class="shortcut-group" data-shortcut="split"><kbd>S</kbd> 切分</span>
+          <span class="shortcut-group" data-shortcut="undo"><kbd>Ctrl</kbd><kbd>Z</kbd> 撤销</span>
+          <span class="shortcut-group" data-shortcut="redo"><kbd>Ctrl</kbd><kbd>Y</kbd>/<kbd>Shift</kbd><kbd>Ctrl</kbd><kbd>Z</kbd> 重做</span>
+          <span class="shortcut-group" data-shortcut="save"><kbd>Ctrl</kbd><kbd>S</kbd> 保存</span>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Toast 通知容器 -->
+    <div id="annotatorModal" class="annotator-modal hidden" aria-hidden="true">
+      <div class="annotator-modal-card" role="dialog" aria-modal="true" aria-labelledby="annotatorModalTitle">
+        <div class="annotator-modal-header">
+          <span class="annotator-modal-eyebrow">多人标注</span>
+          <h2 id="annotatorModalTitle" class="annotator-modal-title">选择标注员</h2>
+          <p id="annotatorModalMessage" class="annotator-modal-message">
+            请选择你的标注身份后开始标注。
+          </p>
+        </div>
+        <div id="annotatorOptionList" class="annotator-option-list"></div>
+        <div class="annotator-modal-actions">
+          <button id="annotatorModalCloseBtn" class="btn btn-ghost btn-sm hidden">继续当前标注员</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

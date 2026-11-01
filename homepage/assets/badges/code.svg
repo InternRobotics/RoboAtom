@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="36" viewBox="0 0 112 36" role="img" aria-labelledby="title">
+  <title id="title">GitHub</title>
+  <rect x=".5" y="2.5" width="111" height="31" rx="6" fill="#f5f0ff" stroke="#cbbce9"/>
+  <g transform="translate(11 7) scale(.916667)" color="#533392" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>
+  </g>
+  <text x="42" y="23" fill="#533392" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="600">GitHub</text>
+</svg>

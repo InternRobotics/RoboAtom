@@ -1,0 +1,1 @@
+{"episode_id": "target", "task_id": "move_block", "num_frames": 150, "fps": 30.0, "signals_path": "target.parquet", "frame_interval": "closed", "segments": [{"start_frame": 0, "end_frame": 74, "skill": "Pick", "subtask": "Pick up the block."}, {"start_frame": 75, "end_frame": 149, "skill": "Place", "subtask": "Place the block."}]}

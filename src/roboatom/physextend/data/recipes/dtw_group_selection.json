@@ -1,0 +1,8 @@
+{
+  "name": "dtw_group_selection",
+  "parent": "joint_dtw_more_groups",
+  "method": "compose",
+  "routes": {
+    "RoboMind2|tienkung": "joint_dtw_transfer"
+  }
+}

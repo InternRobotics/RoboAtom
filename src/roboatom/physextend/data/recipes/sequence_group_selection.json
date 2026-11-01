@@ -1,0 +1,13 @@
+{
+  "name": "sequence_group_selection",
+  "parent": "local_opening_search",
+  "method": "compose",
+  "routes": {
+    "RoboMindV2|franka": "joint_opening_consistency",
+    "RoboMindV2|ur": "joint_opening_consistency",
+    "EBench": "event_checked_majority",
+    "3f": "event_checked_majority",
+    "RoboCOIN|agilex_cobot_decoupled_magic": "event_checked_majority",
+    "RoboCasa": "majority_sequence"
+  }
+}

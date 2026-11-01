@@ -1,0 +1,7 @@
+{
+  "name": "local_opening_search",
+  "parent": "joint_opening_consistency",
+  "method": "local_opening_search",
+  "search_seconds": 0.5,
+  "minimum_gain": 0.01
+}

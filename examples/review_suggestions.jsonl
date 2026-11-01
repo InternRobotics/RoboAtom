@@ -1,0 +1,1 @@
+{"line_no": 1, "sample_id": "target", "verdict": "incorrect", "summary": "Synthetic review fixture: inspect the first segment boundary.", "issues": [{"segment_index": 0, "severity": "incorrect", "reason": "Check the boundary against the original clip.", "suggested_fix": "Review and adjust the boundary manually."}]}

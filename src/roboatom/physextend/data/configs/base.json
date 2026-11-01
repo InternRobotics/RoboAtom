@@ -1,0 +1,33 @@
+{
+  "name": "base",
+  "decoder": "seeded",
+  "cascade": true,
+  "sensor_weight": 0.25,
+  "metadata_grippers": true,
+  "preserve_existing_grippers": true,
+  "gripper_event_source": "seed_best",
+  "sensor_confidence_weight": true,
+  "sensor_correction_fraction": 0.5,
+  "arm_consistent_quality": true,
+  "anchor": {
+    "coarse_overrides": {
+      "retain_strong_events": true,
+      "use_seed_event_lag": true,
+      "seed_activity_progress": true,
+      "activity_weight": 0.5,
+      "use_holding_state": true,
+      "use_calibrated_holding": true,
+      "holding_weight": 0.4,
+      "candidate_keep": 160
+    },
+    "allow_obvious_ambiguous": true,
+    "search_radius_ratio": 0.15,
+    "channel_mismatch_penalty": 0.1,
+    "retry_policy": "seed_group",
+    "seed_event_warp": true,
+    "event_warp_interpolation_only": true
+  },
+  "sensor": {
+    "state_only": true
+  }
+}
